@@ -1,0 +1,14 @@
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.AssemblyInfoInputs.cache
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.AssemblyInfo.cs
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.csproj.CoreCompileInputs.cache
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\bin\Debug\net7.0\C# Work.exe
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\bin\Debug\net7.0\C# Work.deps.json
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\bin\Debug\net7.0\C# Work.runtimeconfig.json
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\bin\Debug\net7.0\C# Work.dll
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\bin\Debug\net7.0\C# Work.pdb
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.dll
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\refint\C# Work.dll
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.pdb
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\C# Work.genruntimeconfig.cache
+C:\Users\tarik\Desktop\AllCodeProgs\LeetCode\TarikLeetCodeWork\ProblemSolutions\CSharp Work\sameTree\obj\Debug\net7.0\ref\C# Work.dll
