@@ -105,81 +105,41 @@ ht_item* inorderSuccessorParent(ht_item* item) {
     return prev;    // Can have returned just item
 }
 
-int helperRemove(MyHashMap* map, int key) {
-    // Assume item is not null
-    ht_item* cur = map->root;
-    ht_item* prev = cur;
-    while(cur != NULL) {
-        prev = cur;
-        if (key < cur->key) {
-            if (cur->left == NULL) {
-                // Could not find it
-                return 1;
-            } else {
-                // Traverse left
-                cur = cur->left;
-            }
-        } else if (key > cur->key) {
-            if (cur->right == NULL) {
-                return 1;
-            } else {
-                cur = cur->right;
-            }
-        } else { // key == cur->key. Found in cur, Now Delete
-            // 1st case: No children
-            // 2nd case: One child
-            // 3rd case: Two child
-            char left = 0;  //cur is right child if 0
-            if (cur->key < prev->key) {
-                //cur is left child
-                left = 1;
-            }
-            // Check children
-            if (cur->right == NULL || cur->left == NULL) {
-                //FREE cur AND REPLACE WITH LEFT SUBTREE
-                ht_item* temp;
-                if (cur->right == NULL) 
-                    temp = cur->left;
-                else
-                    temp = cur->right;
-                if (map->root == prev) { // if root
-                    free(cur);
-                    map->root = temp;   // can be null or left child
-                } else {
-                    free(cur);
-                    if (left) {
-                        prev->left = temp;
-                    } else {
-                        prev->right = temp;
-                    }
-                }
-            } 
-            else {
-                
-                ht_item* succParent = inorderSuccessorParent(cur);
-                // This may have returned cur or something later.
-                // returns NULL never in this case since we have both children
-                // Successor is always left child of succParent or just cur
-                ht_item* succ;
-                if (succParent == cur) {
-                    succ = succParent->right;
-                } else {
-                    succ = succParent->left;
-                }
-                cur->key = succ->key;
-                cur->value = succ->value;
-                // Succ may have right sub-tree
-                if (succParent == cur) {
-                    cur->right = succ->right;
-                } else {
-                    succParent->left = succ->right;
-                }
-                free(succ);
-            }
-            return 2;
-        }
+void rootReplace(ht_item* root) {
+    ht_item* succParent = inorderSuccessorParent(cur);
+    
+}
+
+void generalReplace(ht_item* prev) {
+    // Case 1: No children
+    // Case 2: At least one children
+    // Case 3: Both Children
+    ht_item* succParent = inorderSuccessorParent(cur);
+    // This may have returned cur or something later.
+    // returns NULL never in this case since we have both children
+    // Successor is always left child of succParent or just cur
+    ht_item* succ;
+    if (succParent == cur) {
+        succ = succParent->right;
+    } else {
+        succ = succParent->left;
     }
-    return 1;
+    cur->key = succ->key;
+    cur->value = succ->value;
+    // Succ may have right sub-tree
+    if (succParent == cur) {
+        cur->right = succ->right;
+    } else {
+        succParent->left = succ->right;
+    }
+    free(succ);
+}
+
+int helperRemove(MyHashMap* map, int key) {
+    //
+    if (map->root->key == key) {
+
+    }
 }
 
 void myHashMapRemove(MyHashMap* obj, int key) {
@@ -232,3 +192,78 @@ int main() {
     //myHashMapRemove(obj, key);
     myHashMapFree(obj);
 }
+
+// // Assume item is not null
+//     ht_item* cur = map->root;
+//     ht_item* prev = cur;
+//     while(cur != NULL) {
+//         prev = cur;
+//         if (key < cur->key) {
+//             if (cur->left == NULL) {
+//                 // Could not find it
+//                 return 1;
+//             } else {
+//                 // Traverse left
+//                 cur = cur->left;
+//             }
+//         } else if (key > cur->key) {
+//             if (cur->right == NULL) {
+//                 return 1;
+//             } else {
+//                 cur = cur->right;
+//             }
+//         } else { // key == cur->key. Found in cur, Now Delete
+//             // 1st case: No children
+//             // 2nd case: One child
+//             // 3rd case: Two child
+//             char left = 0;  //cur is right child if 0
+//             if (cur->key < prev->key) {
+//                 //cur is left child
+//                 left = 1;
+//             }
+//             // Check children
+//             if (cur->right == NULL || cur->left == NULL) {
+//                 //FREE cur AND REPLACE WITH LEFT SUBTREE
+//                 ht_item* temp;
+//                 if (cur->right == NULL) 
+//                     temp = cur->left;
+//                 else
+//                     temp = cur->right;
+//                 if (map->root == prev) { // if root
+//                     free(cur);
+//                     map->root = temp;   // can be null or left child
+//                 } else {
+//                     free(cur);
+//                     if (left) {
+//                         prev->left = temp;
+//                     } else {
+//                         prev->right = temp;
+//                     }
+//                 }
+//             } 
+//             else {
+                
+//                 ht_item* succParent = inorderSuccessorParent(cur);
+//                 // This may have returned cur or something later.
+//                 // returns NULL never in this case since we have both children
+//                 // Successor is always left child of succParent or just cur
+//                 ht_item* succ;
+//                 if (succParent == cur) {
+//                     succ = succParent->right;
+//                 } else {
+//                     succ = succParent->left;
+//                 }
+//                 cur->key = succ->key;
+//                 cur->value = succ->value;
+//                 // Succ may have right sub-tree
+//                 if (succParent == cur) {
+//                     cur->right = succ->right;
+//                 } else {
+//                     succParent->left = succ->right;
+//                 }
+//                 free(succ);
+//             }
+//             return 2;
+//         }
+//     }
+//     return 1;
